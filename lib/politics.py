@@ -1,8 +1,9 @@
 #coding: utf8
 import re
 import os
+from collections import deque
 
-re_blacklist = []
+re_blacklist = deque()
 
 def load_words():
     txt_path = os.path.join(os.path.dirname(__file__), 'politics.txt')
@@ -21,4 +22,3 @@ def is_sensitive(kw):
 load_words()
 is_sensitive(u'习主席')
 is_sensitive(u'Test')
-
